@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.testappliction">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CodeTestInterviewActivity">
+        </activity>
+
+        <activity android:name=".CodeTestDataStructureActivity">
+        </activity>
+
+        <activity android:name=".CodingTestActivity">
+        </activity>
+
+        <!-- 코딩 인터뷰 액티비티-->
+        <activity android:name=".questions.CodeTestCodilityActivity">
+        </activity>
+
+        <activity android:name=".codinginterview.CodeTestInterview1Activity">
+        </activity>
+
+        <activity android:name=".codinginterview.CodeTestInterview2Activity">
+        </activity>
+
+        <activity android:name=".codinginterview.CodeTestInterview3Activity">
+        </activity>
+
+        <activity android:name=".codinginterview.CodeTestInterview4Activity">
+        </activity>
+
+        <activity android:name=".codinginterview.CodeTestInterview5Activity">
+        </activity>
+
+    </application>
+
+</manifest>
