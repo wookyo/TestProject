@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- main activity 관련-->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fragment_main_list_item_tap_height">30dp</dimen>
+    <dimen name="adapter_main_list_item_height">72dp</dimen>
+    <dimen name="adapter_main_list_item_padding_side">10dp</dimen>
+    <dimen name="adapter_main_list_item_size_thumnail">48dp</dimen>
+    <dimen name="adapter_main_list_item_size_add">30dp</dimen>
+    <dimen name="adapter_main_list_item_size_text_main">18dp</dimen>
+    <dimen name="adapter_main_list_item_size_text_sub">13dp</dimen>
+    <dimen name="adapter_main_list_item_margin_gap">4dp</dimen>
+    <dimen name="adapter_main_list_item_margin_gap_conatainer">10dp</dimen>
+
+    <!-- info activity 관련-->
+    <dimen name="activity_main_item_padding">10dp</dimen>
+    <dimen name="activity_main_item_text_size_main">20dp</dimen>
+    <dimen name="activity_main_item_text_size_sub">13dp</dimen>
+    <dimen name="activity_main_item_sub_margin">4dp</dimen>
+    <dimen name="activity_main_item_size_thumail">30dp</dimen>
+    <dimen name="activity_main_item_margin_add_btn">30dp</dimen>
+</resources>
