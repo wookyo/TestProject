@@ -30,7 +30,7 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/adapter_main_list_item_height"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/adapter_main_list_item_margin_gap_conatainer"
@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
+                android:text="TEST################"
                 android:maxLines="1"
                 android:textColor="@color/black"
                 android:textSize="@dimen/adapter_main_list_item_size_text_main" />
@@ -89,11 +90,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/main_list_item_btn_add_favorite"
-            android:layout_width="@dimen/adapter_main_list_item_size_add"
-            android:layout_height="@dimen/adapter_main_list_item_size_add"
-            android:layout_gravity="right|center_vertical"
-            android:background="@drawable/selector_btn_favorite_add"/>
+
     </LinearLayout>
 </LinearLayout>

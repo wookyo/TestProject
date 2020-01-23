@@ -1,9 +1,12 @@
 package com.example.inovationtest.constants;
 
 public class Constants {
+    public static final String CLIENT_ID = "KakaoAK e5ade49ee0ab94df973130a331ae0233";//애플리케이션 클라이언트 아이디값";
+
     public class URL{
         // 메인 리스트 main Url
-        public static final String URL_MAIN_CONTENT_BASE = "https://withinnovation.co.kr/App/json/";
+//        public static final String URL_MAIN_CONTENT_BASE = "https://withinnovation.co.kr/App/json/";
+        public static final String URL_MAIN_CONTENT_BASE = "https://dapi.kakao.com/v2/search/image";
 
         // 메인 리스트 sub Url
         public static final String URL_MAIN_CONTENT_SUB = ".json";

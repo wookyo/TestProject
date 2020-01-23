@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">InovationTest</string>
-    <string name="main_tap_main">여기어때</string>
-    <string name="main_tap_favorite">즐겨찾기</string>
+    <string name="main_tap_main"></string>
+
     <string name="main_item_id">id : %s </string>
-    <string name="main_item_rate">평점 : %s </string>
-    <string name="main_item_price">가격 : %s </string>
+
     <string name="main_item_register_time">등록시간 : %s </string>
     <string name="favorite_tap_recent">최근 등록순</string>
     <string name="favorite_tap_rate">평점순</string>
     <string name="favorite_tap_ascending">오름차순</string>
     <string name="favorite_tap_deascending">내림차순</string>
 
-    <string name="erroe_network_not_connect">네트워크가 연결되지 않았습니다.</string>
+    <string name="error_not_search_data">해당되는 검색어에 대한 DATA가 없습니다. </string>
+    <string name="error_network_not_connect">네트워크가 연결되지 않았습니다.</string>
 </resources>

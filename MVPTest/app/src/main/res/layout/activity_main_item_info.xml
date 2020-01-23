@@ -40,65 +40,7 @@
                 android:layout_width="@dimen/activity_main_item_size_thumail"
                 android:layout_height="@dimen/activity_main_item_size_thumail" />
 
-            <!-- item id -->
-            <TextView
-                android:id="@+id/main_item_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_main_item_sub_margin"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/activity_main_item_text_size_sub" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=","
-                android:textColor="@color/gray"
-                android:textSize="@dimen/activity_main_item_text_size_sub" />
-
-            <!-- item 평점 -->
-            <TextView
-                android:id="@+id/main_item_rate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_main_item_sub_margin"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/activity_main_item_text_size_sub" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=","
-                android:textColor="@color/gray"
-                android:textSize="@dimen/activity_main_item_text_size_sub" />
-
-            <!-- item 가격 -->
-            <TextView
-                android:id="@+id/main_item_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_main_item_sub_margin"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/activity_main_item_text_size_sub" />
-
-            <ToggleButton
-                android:id="@+id/btn_favorite_add"
-                android:layout_width="@dimen/activity_main_item_size_thumail"
-                android:layout_height="@dimen/activity_main_item_size_thumail"
-                android:layout_gravity="right|center_vertical"
-                android:layout_margin="@dimen/fab_margin"
-                android:textOff=""
-                android:textOn=""
-                android:background="@drawable/selector_btn_favorite_add" />
         </LinearLayout>
-
-        <!--item 주제 -->
-        <TextView
-            android:id="@+id/main_item_subject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/activity_main_item_text_size_sub" />
     </LinearLayout>
 
 </LinearLayout>

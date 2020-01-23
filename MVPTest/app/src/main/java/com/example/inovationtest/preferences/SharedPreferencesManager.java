@@ -72,35 +72,35 @@ public class SharedPreferencesManager {
     }
 
 
-    /**
-     * 객체 삭제
-     *  ID 기준으로 삭제
-     */
-    public static void deleteObjectPreferences(Context context, String key, MainListItemData data){
-        data.setFavoriteAddTime(0);
-        data.setFavoriteAdd(false);
-        ArrayList<MainListItemData> list = getObjectListPreferences(context, key);
-        for(MainListItemData item : list){
-            if(item.getId() == data.getId()){
-                list.remove(item);
-                break;
-            }
-        }
-        setObjectListPreferences(context, key, list);
-    }
+//    /**
+//     * 객체 삭제
+//     *  ID 기준으로 삭제
+//     */
+//    public static void deleteObjectPreferences(Context context, String key, MainListItemData data){
+//        data.setFavoriteAddTime(0);
+//        data.setFavoriteAdd(false);
+//        ArrayList<MainListItemData> list = getObjectListPreferences(context, key);
+//        for(MainListItemData item : list){
+//            if(item.getId() == data.getId()){
+//                list.remove(item);
+//                break;
+//            }
+//        }
+//        setObjectListPreferences(context, key, list);
+//    }
 
-    /**
-     * 객체 저장
-     */
-    public static void setObjectPreferences(Context context, String key, MainListItemData data){
-        ArrayList<MainListItemData> list = getObjectListPreferences(context, key);
-        if(list == null){
-            list = new ArrayList<MainListItemData>();
-        }
-        data.setFavoriteAddTime(System.currentTimeMillis());
-        list.add(data);
-        setObjectListPreferences(context, key, list);
-    }
+//    /**
+//     * 객체 저장
+//     */
+//    public static void setObjectPreferences(Context context, String key, MainListItemData data){
+//        ArrayList<MainListItemData> list = getObjectListPreferences(context, key);
+//        if(list == null){
+//            list = new ArrayList<MainListItemData>();
+//        }
+//        data.setFavoriteAddTime(System.currentTimeMillis());
+//        list.add(data);
+//        setObjectListPreferences(context, key, list);
+//    }
 
     /**
      * String 저장

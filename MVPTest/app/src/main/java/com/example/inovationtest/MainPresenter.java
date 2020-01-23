@@ -18,36 +18,13 @@ public class MainPresenter implements MainContract.Presenter{
 
 
     ///////////////////[request]//////////
-    /**
-     * main 즐겨찾기값과 비교 요청
-     * */
-    @Override
-    public void checkFavoriteData(Context context, ArrayList<MainContentListData.MainListItemData> list) {
-        mModel.checkFavoriteData(context, list);
-    }
 
     /**
      * main list  Data 요청
      * */
     @Override
-    public void requestContentData(Context context, int page) {
-        mModel.requestContentData(context,page);
-    }
-
-    /**
-     * main 즐겨찾기  Data 요청
-     * */
-    @Override
-    public void requestFavoriteData(Context context) {
-        mModel.requestFavoriteData(context);
-    }
-
-    /**
-     * main list 즐겨찾기 재정렬 Data 요청
-     * */
-    @Override
-    public void sortFavoriteData(int mainType, int subType, ArrayList<MainContentListData.MainListItemData> list) {
-        mModel.sortFavoriteData(mainType, subType, list);
+    public void requestContentData(Context context, String input, int page) {
+        mModel.requestContentData(context, input, page);
     }
 
     ////////////////////[response]//////////
@@ -59,27 +36,4 @@ public class MainPresenter implements MainContract.Presenter{
         mView.responseContentData(isSuccess, data);
     }
 
-    /**
-     * main list 즐겨찾기값과 비교 요청 응답
-     * */
-    @Override
-    public void responseCheckFavoriteData(ArrayList<MainContentListData.MainListItemData> list) {
-        mView.responseCheckFavoriteData(list);
-    }
-
-    /**
-     * main list 즐겨찾기값 Data 요청 응답
-     * */
-    @Override
-    public void responseFavoriteData(ArrayList<MainContentListData.MainListItemData> list) {
-        mView.responseFavoriteData(list);
-    }
-
-    /**
-     * main list 즐겨찾기 재정렬 Data 요청 응답
-     * */
-    @Override
-    public void reponseSortFavoriteData(ArrayList<MainContentListData.MainListItemData> list) {
-        mView.reponseSortFavoriteData(list);
-    }
 }

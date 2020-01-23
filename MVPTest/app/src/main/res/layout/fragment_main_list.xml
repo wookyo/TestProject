@@ -5,43 +5,25 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/tap_favorite_sort_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/fragment_main_list_item_tap_height"
-        android:visibility="gone"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tap_favorite_sort_main"
+        <EditText
+            android:id="@+id/main_edit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/favorite_tap_recent"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/adapter_main_list_item_size_text_sub" />
-
-        <TextView
-            android:id="@+id/tap_favorite_sort_sub"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/favorite_tap_ascending"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/adapter_main_list_item_size_text_sub" />
-
+            android:layout_height="match_parent" />
     </LinearLayout>
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/main_list_swipe"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/main_list_swipe"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/main_list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 </LinearLayout>

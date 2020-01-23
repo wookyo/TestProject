@@ -9,116 +9,76 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainContentListData  {
-    @SerializedName("msg")
-    private String msg;
+    @SerializedName("documents")
+    private ArrayList<MainListItemData> documents;
 
-    @SerializedName("data")
-    private MainListInfoData data;
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public MainListInfoData getData() {
-        return data;
-    }
-
-    public class MainListInfoData{
-        @SerializedName("totalCount")
-        private String totalCount;
-
-        @SerializedName("product")
-        private ArrayList<MainListItemData> item;
-
-        public String getTotalCount() {
-            return totalCount;
-        }
-
-        public ArrayList<MainListItemData> getItem() {
-            return item;
-        }
+    public ArrayList<MainListItemData> getData() {
+        return documents;
     }
 
     public class MainListItemData implements Serializable {
-        @SerializedName("id")
-        private int id;
+        // 컬렉션
+        @SerializedName("collection")
+        private String collection;
 
-        @SerializedName("name")
-        private String name;
+        // 이미지 썸네일 URL
+        @SerializedName("thumbnail_url")
+        private String thumbnail_url;
 
-        @SerializedName("thumbnail")
-        private String thumbnail;
+        // 이미지 URL
+        @SerializedName("image_url")
+        private String image_url;
 
-        @SerializedName("description")
-        private MainListItemDescription description;
+        // 이미지의 가로 크기
+        @SerializedName("width")
+        private int width;
 
-        @SerializedName("rate")
-        private String rate;
+        // 이미지의 세로 크기
+        @SerializedName("height")
+        private int height;
 
-        public int getId() {
-            return id;
+        // 출처명
+        @SerializedName("display_sitename")
+        private String display_sitename;
+
+        // 문서 URL
+        @SerializedName("doc_url")
+        private String doc_url;
+
+        // 문서 작성시간. ISO 8601. [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss].000+[tz]
+        @SerializedName("datetime")
+        private String datetime;
+
+        public String getCollection() {
+            return collection;
         }
 
-        public String getName() {
-            return name;
+        public String getThumbnailUrl() {
+            return thumbnail_url;
         }
 
-        public String getThumbnail() {
-            return thumbnail;
+        public String getImageUrl() {
+            return image_url;
         }
 
-        private boolean favoriteAdd = false;
-
-        private long favoriteAddTime =  0;
-
-        public MainListItemDescription getDescription() {
-            return description;
+        public int getWidth() {
+            return width;
         }
 
-        public String getRate() {
-            return rate;
+        public int getHeight() {
+            return height;
         }
 
-
-        public boolean getIsFavoriteAdd() {
-            return favoriteAdd;
+        public String getDisplaySitename() {
+            return display_sitename;
         }
 
-        public void setFavoriteAdd(boolean favoriteAdd) {
-            this.favoriteAdd = favoriteAdd;
+        public String getDocUrl() {
+            return doc_url;
         }
 
-        public long getFavoriteAddTime() {
-            return favoriteAddTime;
-        }
-
-        public void setFavoriteAddTime(long favoriteAddTime) {
-            this.favoriteAddTime = favoriteAddTime;
-        }
-
-
-    }
-
-    public class MainListItemDescription implements Serializable{
-        @SerializedName("imagePath")
-        private String imagePath;
-
-        @SerializedName("subject")
-        private String subject;
-
-        @SerializedName("price")
-        private int price;
-
-        public String getImagePath() {
-            return imagePath;
-        }
-
-        public String getSubject() {
-            return subject;
-        }
-
-        public int getPrice() {
-            return price;
+        public String getDateTime() {
+            return datetime;
         }
     }
 

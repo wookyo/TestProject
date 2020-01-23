@@ -48,57 +48,57 @@ public class MainFavoriteListAdapter<T> extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
-        final MainListItemData data = mItems.get(position);
-        final int itemId = data.getId();
-        final String itemName = data.getName();
-        final String itemImg = data.getThumbnail();
-        final String itemRate = data.getRate();
-        final long itemAddTime = data.getFavoriteAddTime();
-
-        data.setFavoriteAdd(true);
-        final ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-
-        Glide.clear(itemViewHolder.mItemImage);
-        Glide.with(mContext)
-                .load(itemImg)
-                .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .skipMemoryCache(true)
-                .into(itemViewHolder.mItemImage);
-
-        itemViewHolder.mItemTitle.setText(itemName);
-        itemViewHolder.mItemRate.setText(mContext.getString(R.string.main_item_rate,itemRate));
-
-        itemViewHolder.mContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mCallback != null){
-                    mCallback.onItemClicked(data);
-                }
-            }
-        });
-
-        if(itemAddTime > 0){
-            itemViewHolder.mItemComma.setVisibility(View.VISIBLE);
-            SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd hh:mm:ss");
-            String time = format.format (itemAddTime);
-            itemViewHolder.mItemAddTime.setText(mContext.getString(R.string.main_item_register_time,time));
-        }
-
-        itemViewHolder.mItemAddItem.setSelected(true);
-        itemViewHolder.mItemAddItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mCallback != null) {
-                    SharedPreferencesManager.deleteObjectPreferences(mContext,
-                            Constants.Preference.PREFERENCE_FAVORITE_ADD,
-                            data);
-
-                    Intent intent = new Intent();
-                    intent.setAction(Constants.Intent.ACTION_BROADCAST_FAVORITE_DATA_CHANGE);
-                    mContext.sendBroadcast(intent);
-                }
-            }
-        });
+//        final MainListItemData data = mItems.get(position);
+//        final int itemId = data.getId();
+//        final String itemName = data.getName();
+//        final String itemImg = data.getThumbnail();
+//        final String itemRate = data.getRate();
+//        final long itemAddTime = data.getFavoriteAddTime();
+//
+//        data.setFavoriteAdd(true);
+//        final ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
+//
+//        Glide.clear(itemViewHolder.mItemImage);
+//        Glide.with(mContext)
+//                .load(itemImg)
+//                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+//                .skipMemoryCache(true)
+//                .into(itemViewHolder.mItemImage);
+//
+//        itemViewHolder.mItemTitle.setText(itemName);
+//        itemViewHolder.mItemRate.setText(mContext.getString(R.string.main_item_rate,itemRate));
+//
+//        itemViewHolder.mContainer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(mCallback != null){
+//                    mCallback.onItemClicked(data);
+//                }
+//            }
+//        });
+//
+//        if(itemAddTime > 0){
+//            itemViewHolder.mItemComma.setVisibility(View.VISIBLE);
+//            SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd hh:mm:ss");
+//            String time = format.format (itemAddTime);
+//            itemViewHolder.mItemAddTime.setText(mContext.getString(R.string.main_item_register_time,time));
+//        }
+//
+//        itemViewHolder.mItemAddItem.setSelected(true);
+//        itemViewHolder.mItemAddItem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (mCallback != null) {
+//                    SharedPreferencesManager.deleteObjectPreferences(mContext,
+//                            Constants.Preference.PREFERENCE_FAVORITE_ADD,
+//                            data);
+//
+//                    Intent intent = new Intent();
+//                    intent.setAction(Constants.Intent.ACTION_BROADCAST_FAVORITE_DATA_CHANGE);
+//                    mContext.sendBroadcast(intent);
+//                }
+//            }
+//        });
     }
 
 
@@ -122,13 +122,13 @@ public class MainFavoriteListAdapter<T> extends RecyclerView.Adapter<RecyclerVie
         public ItemViewHolder(View itemView) {
             super(itemView);
 
-            mContainer = (LinearLayout) itemView.findViewById(R.id.main_list_item_layout);
-            mItemImage = (ImageView) itemView.findViewById(R.id.main_list_item_img);
-            mItemTitle = (TextView) itemView.findViewById(R.id.main_list_item_title);
-            mItemRate = (TextView) itemView.findViewById(R.id.main_list_item_score);
-            mItemComma = (TextView) itemView.findViewById(R.id.main_list_item_comma);
-            mItemAddTime = (TextView) itemView.findViewById(R.id.main_list_item_score_time);
-            mItemAddItem = (ImageButton) itemView.findViewById(R.id.main_list_item_btn_add_favorite);
+//            mContainer = (LinearLayout) itemView.findViewById(R.id.main_list_item_layout);
+//            mItemImage = (ImageView) itemView.findViewById(R.id.main_list_item_img);
+//            mItemTitle = (TextView) itemView.findViewById(R.id.main_list_item_title);
+//            mItemRate = (TextView) itemView.findViewById(R.id.main_list_item_score);
+//            mItemComma = (TextView) itemView.findViewById(R.id.main_list_item_comma);
+//            mItemAddTime = (TextView) itemView.findViewById(R.id.main_list_item_score_time);
+//            mItemAddItem = (ImageButton) itemView.findViewById(R.id.main_list_item_btn_add_favorite);
         }
     }
 }

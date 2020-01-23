@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,16 +49,15 @@ public class MainContentListAdapter<T> extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
+       Log.d(TAG, "[onBindViewHolder]");
         final MainListItemData data = mItems.get(position);
-        final int itemId = data.getId();
-        final String itemName = data.getName();
-        final String itemImg = data.getThumbnail();
-        final String itemRate = data.getRate();
-        final boolean itemIsAdd = data.getIsFavoriteAdd();
+        String itemName = data.getDisplaySitename();
+        final String itemImg = data.getThumbnailUrl();
 
+        if (TextUtils.isEmpty(itemName)) {
+            itemName = data.getCollection();
+        }
         final ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-
-
         Glide.clear(itemViewHolder.mItemImage);
         Glide.with(mContext)
                 .load(itemImg)
@@ -66,7 +66,6 @@ public class MainContentListAdapter<T> extends RecyclerView.Adapter<RecyclerView
                 .into(itemViewHolder.mItemImage);
 
         itemViewHolder.mItemTitle.setText(itemName);
-        itemViewHolder.mItemRate.setText(mContext.getString(R.string.main_item_rate,itemRate));
 
         itemViewHolder.mContainer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,27 +76,6 @@ public class MainContentListAdapter<T> extends RecyclerView.Adapter<RecyclerView
             }
         });
 
-        itemViewHolder.mItemAddItem.setSelected(itemIsAdd);
-        itemViewHolder.mItemAddItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mCallback != null){
-                    // 현재 상태에 따라 data 변경
-                    if(itemIsAdd){
-                        SharedPreferencesManager.deleteObjectPreferences(mContext,
-                                Constants.Preference.PREFERENCE_FAVORITE_ADD,
-                                data);
-                    }else{
-                        SharedPreferencesManager.setObjectPreferences(mContext,
-                                Constants.Preference.PREFERENCE_FAVORITE_ADD,
-                                data);
-                    }
-                    Intent intent = new Intent();
-                    intent.setAction(Constants.Intent.ACTION_BROADCAST_FAVORITE_DATA_CHANGE);
-                    mContext.sendBroadcast(intent);
-                }
-            }
-        });
     }
 
 
@@ -111,21 +89,17 @@ public class MainContentListAdapter<T> extends RecyclerView.Adapter<RecyclerView
     class ItemViewHolder extends RecyclerView.ViewHolder {
         private LinearLayout mContainer;
         private TextView mItemTitle;
-        private TextView mItemRate;
-        private TextView mItemRateTime;
         private ImageView mItemImage;
-        private ImageButton mItemAddItem;
+
         private Object data;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-
             mContainer = (LinearLayout) itemView.findViewById(R.id.main_list_item_layout);
             mItemImage = (ImageView) itemView.findViewById(R.id.main_list_item_img);
             mItemTitle = (TextView) itemView.findViewById(R.id.main_list_item_title);
-            mItemRate = (TextView) itemView.findViewById(R.id.main_list_item_score);
-            mItemRateTime = (TextView) itemView.findViewById(R.id.main_list_item_score_time);
-            mItemAddItem = (ImageButton) itemView.findViewById(R.id.main_list_item_btn_add_favorite);
+
+
         }
     }
 }
