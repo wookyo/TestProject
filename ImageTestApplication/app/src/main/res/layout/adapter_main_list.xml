@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_recommand_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/adapter_main_list_item_padding_side"
+    android:paddingRight="@dimen/adapter_main_list_item_padding_side">
+
+
+    <!-- item-->
+    <LinearLayout
+        android:id="@+id/main_list_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/adapter_main_list_item_height"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/adapter_main_list_item_height">
+
+            <ImageView
+                android:id="@+id/main_list_item_img"
+                android:layout_width="@dimen/adapter_main_list_item_size_thumnail"
+                android:layout_height="@dimen/adapter_main_list_item_size_thumnail"
+                android:layout_centerInParent="true"
+                android:layout_gravity="left|center_vertical" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/adapter_main_list_item_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/adapter_main_list_item_margin_gap_conatainer"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/main_list_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/adapter_main_list_item_size_text_main" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/adapter_main_list_item_margin_gap"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_list_item_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/adapter_main_list_item_size_text_sub" />
+
+                <TextView
+                    android:id="@+id/main_list_item_comma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=","
+                    android:visibility="gone"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/adapter_main_list_item_size_text_sub" />
+
+
+                <TextView
+                    android:id="@+id/main_list_item_score_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/adapter_main_list_item_margin_gap"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/adapter_main_list_item_size_text_sub" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/main_list_item_btn_add_favorite"
+            android:layout_width="@dimen/adapter_main_list_item_size_add"
+            android:layout_height="@dimen/adapter_main_list_item_size_add"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/selector_btn_favorite_add"/>
+    </LinearLayout>
+</LinearLayout>

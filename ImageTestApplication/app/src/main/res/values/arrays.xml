@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="favorite_tap_main_type_values">
+        <item>@string/favorite_tap_recent</item>
+        <item>@string/favorite_tap_rate</item>
+    </string-array>
+
+    <string-array name="favorite_tap_sub_type_values">
+        <item>@string/favorite_tap_ascending</item>
+        <item>@string/favorite_tap_deascending</item>
+    </string-array>
+</resources>
